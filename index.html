@@ -288,19 +288,19 @@ in Simulation</h1>
           <h2 class="title is-3">Approach</h2>
           <div class="content has-text-justified has-text-centered">
             <img src="static/images/fig2.png" />
-            <h3 class="title is-4">SIMPLER Policy Evaluation</h3>
             <p>
               We introduce SIMPLER, a suite of open-source simulated evaluation environments for common real robot manipulation setups.
               All environments expose a uniform Gym API. Additionally, we open-source all policy inference code (e.g.,
               RT-1, RT-1-X, Octo) for real-to-sim evaluation, and we provide a detailed guide for evaluating new policies and creating new evaluation
               environments.
             </p>
-            <h3 class="title is-4">Open-Vocabulary Landmark Indexing</h3>
+            <h3 class="title is-4">Metrics for Real-to-Sim Evaluation</h3>
+            <img src="static/images/metrics.png" />
             <p>
-              We encode the open-vocabulary landmark names ("chair", "green plant", "table" etc.)
-              with the text encoder in the Visual Language Model. Then we align the landmark names
-              with the pixels in the VLMap by computing the cosine similarity between their embeddings.
-              We get the mask of each landmark type with the argmax operation on the similarity score.
+              We propose the Mean Maximum Rank Violation (MMRV) metric to better assess the real-and-sim policy ranking consistency.
+              The key underlying quantity is the rank violation between  two policies, which weighs the significance of the
+              simulator incorrectly ranking the items by the corresponding margin in real-world performance.
+              MMRV aggregates the N^2 rank violations by averaging the worst-case rank violation for each policy.
             </p>
             <h3 class="title is-4">Navigation Policies Generation</h3>
             <img src="static/images/codegen_notitle.png" />
