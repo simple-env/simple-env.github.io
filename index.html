@@ -288,16 +288,12 @@ in Simulation</h1>
           <h2 class="title is-3">Approach</h2>
           <div class="content has-text-justified has-text-centered">
             <img src="static/images/fig2.png" />
-            <h3 class="title is-4">VLMap Creation</h3>
+            <h3 class="title is-4">SIMPLER Policy Evaluation</h3>
             <p>
-              The key idea behind building a VLMap is to fuse pretrained
-              visual-language features into a geometrical reconstruction of the scene. This can be
-              done by computing dense pixel-level embeddings from an existing
-              visual-language model (over the RGB-D video feed of the robot) and
-              back-projecting them onto the 3D surface of the environment (captured
-              from depth data used for reconstruction with visual odometry). Finally,
-              we generate the top-down scene representation by storing the visual-language
-              features of each image pixel in the corresponding grid map pixel location.
+              We introduce SIMPLER, a suite of open-source simulated evaluation environments for common real robot manipulation setups.
+              All environments expose a uniform Gym API. Additionally, we open-source all policy inference code (e.g.,
+              RT-1, RT-1-X, Octo) for real-to-sim evaluation, and we provide a detailed guide for evaluating new policies and creating new evaluation
+              environments.
             </p>
             <h3 class="title is-4">Open-Vocabulary Landmark Indexing</h3>
             <p>
