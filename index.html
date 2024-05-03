@@ -302,18 +302,19 @@ in Simulation</h1>
               simulator incorrectly ranking the items by the corresponding margin in real-world performance.
               MMRV aggregates the N^2 rank violations by averaging the worst-case rank violation for each policy.
             </p>
-            <h3 class="title is-4">Navigation Policies Generation</h3>
-            <img src="static/images/codegen_notitle.png" />
+            <h3 class="title is-4">Visual Matching to mitigate Real-to-Sim Visual Gap</h3>
+            <img src="static/images/visual_matching.png" />
             <p>
-              We generate the navigation policies in the form of executable code with the help of Large Language Models.
-              By providing a few examples in the prompt, we exploit GPT-3 to parse language
-              instructions into a string of executable code, expressing functions
-              or logic structures (if/else statements, for/while loops) and parameterizing API calls
-              (e.g., robot.move_to(target_name) or robot.turn(degrees)).
+              Visual discrepancies between real-world and simulated environments can comprise a distribution shift that adversely
+              affects a learned policy’s behavior, rendering simulated evaluation unreliable. Our goal is to match the simulator
+              visuals to those of the real-world environment with only a modest amount of manual effort. Our proposed Visual Matching
+              consists of (1) green screening, i.e. segmenting out interactive simulated assets and overlaying them onto real-world
+              backgrounds; and (2) texture matching, which involves projecting real object textures onto simulation assets and tuning
+              robot arm colors using real videos.
             </p>
-            <video autoplay muted loop playsinline width="100%">
+           <!-- <video autoplay muted loop playsinline width="100%">
               <source src="static/images/vlmaps_blog_post.mp4" type="video/mp4">
-            </video>
+            </video>-->
 
           </div>
         </div>
