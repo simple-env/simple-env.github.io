@@ -299,7 +299,7 @@ in Simulation</h1>
               We introduce SIMPLER, a suite of open-source simulated evaluation environments for common real robot manipulation setups.
               All environments expose a uniform Gym API. Additionally, we open-source all policy inference code (e.g.,
               RT-1, RT-1-X, Octo) for real-to-sim evaluation, and we provide a detailed guide for evaluating new policies and creating new evaluation
-              environments.
+              environments.  All environments  can be imported with a single line of code and can be interacted with through a standard Gym interface.
             </p>
             <h3 class="title is-4">Metrics for Real-to-Sim Evaluation</h3>
             <img src="static/images/metrics.png" />
@@ -336,30 +336,36 @@ in Simulation</h1>
             <!-- Animation. -->
             <div class="columns is-centered">
               <div class="column is-full-width">
-                <h2 class="title is-3">Experiment</h2>
+                <h2 class="title is-3">Experiments</h2>
 
                 <!-- Interpolating. -->
-                <h3 class="title is-4">Long-Horizon Spatial Goal Navigation from Language</h3>
+                <h3 class="title is-4">Evaluating Policies</h3>
                 <div class="content has-text-justified">
                   <p>
-                    With open-vocabulary landmark indexing, VLMaps enables long-horizon spatial goal navigation with
-                    natural language instructions
+                    Our approach yields a strong correlation between real-world and simulated performance for various open-source robot policies,
+                    across two commonly used robot embodiments (Google Robot and WidowX) and over ∼1500 evaluation episodes.
                   </p>
                 </div>
                 <div class="columns is-vcentered interpolation-panel">
                   <p>Sequence 1</p>
                   <div class="column  has-text-centered">
                     <video autoplay controls muted loop playsinline height="100%">
-                      <source src="static/images/spatial_goal_nav_1_v1.mp4" type="video/mp4">
+                      <source src="static/videos/rt2x_place_apple_into_top_drawer.mp4" type="video/mp4">
                     </video>
                     <p>VLMaps</p>
                   </div>
                   <div class="column  has-text-centered">
                     <video autoplay controls muted loop playsinline height="100%">
-                      <source src="static/images/spatial_goal_nav_cow_1.mp4" type="video/mp4">
+                      <source src="static/videos/octo_base_put_eggplant_in_basket.mp4" type="video/mp4">
                     </video>
                     <p>CLIP on Wheels</p>
                   </div>
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline height="100%">
+                     <source src="static/videos/octo_small_stack_green_block_on_yellow_block.mp4" type="video/mp4">
+                    </video>
+                    <p id="overlay">Octo-Small stack green block on yellow block</p>
+                   </div>
                 </div>
 
 
@@ -367,15 +373,21 @@ in Simulation</h1>
                   <p>Sequence 2</p>
                   <div class="column  has-text-centered">
                     <video autoplay controls muted loop playsinline height="100%">
-                      <source src="static/images/spatial_goal_nav_2_v1.mp4" type="video/mp4">
+                      <source src="static/videos/octo_small_put_spoon_on_towel.mp4" type="video/mp4">
                     </video>
                     <p>VLMaps</p>
                   </div>
                   <div class="column  has-text-centered">
                     <video autoplay controls muted loop playsinline height="100%">
-                      <source src="static/images/spatial_goal_nav_cow_2.mp4" type="video/mp4">
+                      <source src="static/videos/rt1x_close_bottom_drawer.mp4" type="video/mp4">
                     </video>
                     <p>CLIP on Wheels</p>
+                  </div>
+                  <div class="column  has-text-centered">
+                  <video autoplay controls muted loop playsinline height="100%">
+                   <source src="static/videos/rt1_move_redbull_can_near_orange.mp4" type="video/mp4">
+                  </video>
+                  <p id="overlay">RT1 move redbull can near orange</p>
                   </div>
                 </div>
 
