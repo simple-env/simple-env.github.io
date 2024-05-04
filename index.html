@@ -319,6 +319,13 @@ in Simulation</h1>
               backgrounds; and (2) texture matching, which involves projecting real object textures onto simulation assets and tuning
               robot arm colors using real videos.
             </p>
+            <h3 class="title is-4">System Identification to mitigate Real-to-Sim Control Gap</h3>
+            <img src="static/images/control_gap.png" />
+            <p>
+              The goal of mitigating the control gap between simulated and real-world environments is to ensure that policy actions
+              executed in simulation yields comparable effects on the robot’s end-effector as those observed when executed on the real
+              robot. We perform system identification (SysID) for closing the control gap between real and simulated environments on a small sample of trajectories from the real world dataset.
+            </p>
            <!-- <video autoplay muted loop playsinline width="100%">
               <source src="static/images/vlmaps_blog_post.mp4" type="video/mp4">
             </video>-->
@@ -372,7 +379,6 @@ in Simulation</h1>
                     <video autoplay controls muted loop playsinline height="100%">
                       <source src="static/videos/octo_small_put_spoon_on_towel.mp4" type="video/mp4">
                     </video>
-                    <p>VLMaps</p>
                   </div>
                   <div class="column  has-text-centered">
                     <video autoplay controls muted loop playsinline height="100%">
