@@ -1032,7 +1032,7 @@ var onMouseEnter = Symbol('onMouseEnter');
 var onMouseLeave = Symbol('onMouseLeave');
 
 var defaultOptions = {
-	autoplay: false,
+	autoplay: true,
 	autoplaySpeed: 3000
 };
 
