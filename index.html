@@ -7,35 +7,32 @@
 in Simulation</title>
   <meta name="description" content="Evaluating Real-World Robot Manipulation Policies
 in Simulation">
-  <meta name="keywords" content="VLMaps">
+  <meta name="keywords" content="SIMPLER">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:title" content="Evaluating Real-World Robot Manipulation Policies
 in Simulation">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Evaluating Real-World Robot Manipulation Policies
 in Simulation">
-  <meta property="og:image" content="https://vlmaps.github.io/static/images/teaser.png" />
+  <meta property="og:image" content="https://simpler-env.github.io/static/images/teaser.png" />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1082" />
-  <meta property="og:image:height" content="639" />
-  <meta property="og:url" content="https://vlmaps.github.io" />
+  <meta property="og:image:width" content="1939" />
+  <meta property="og:image:height" content="772" />
+  <meta property="og:url" content="https://simpler-env.github.io/" />
   <meta property="og:description" content="Project page for Evaluating Real-World Robot Manipulation Policies
 in Simulation" />
   <meta name="twitter:title" content="Evaluating Real-World Robot Manipulation Policies
 in Simulation" />
   <meta name="twitter:description" content="Project page for Evaluating Real-World Robot Manipulation Policies
 in Simulation" />
-  <meta name="twitter:image" content="https://vlmaps.github.io/static/images/teaser.png" />
+  <meta name="twitter:image" content="https://simpler-env.github.io/static/images/teaser.png" />
 
   <!-- Google Tag Manager -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X1BJH7MPG6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-X1BJH7MPG6');
-  </script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T898ZNQZ');</script>
   <!-- End Google Tag Manager -->
   <!-- <script>
     window.dataLayer = window.dataLayer || [];
@@ -57,7 +54,7 @@ in Simulation" />
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/vlmaps_icon.svg">
+  <link rel="icon" href="./static/images/icon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -68,8 +65,8 @@ in Simulation" />
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFJ2DFW" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T898ZNQZ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
 
@@ -264,9 +261,15 @@ in Simulation</h1>
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              The field of robotics has made significant advances towards generalist robot manipulation policies. However, real-world evaluation is neither scalable nor reproducible, and these pain points will only worsen as policies broaden the spectrum of tasks they can perform and need to be evaluated on in order to comprehensively assess their capabilities.
+              The field of robotics has made significant advances towards generalist robot manipulation policies. However, real-world evaluation of such policies is not scalable and 
+              faces reproducibility challenges, which are likely to worsen as policies broaden the spectrum of tasks they can perform.
               In this work, we demonstrate that simulation-based evaluation can be a scalable, reproducible, and reliable proxy for real-world evaluation.
-              We identify control and visual disparities between real and simulated environments as key challenges for reliable simulated evaluation and propose approaches for mitigating these gaps without resorting to crafting full-fidelity digital twins. We then employ these approaches to create SIMPLER, a collection of simulated environments for manipulation policy evaluation on common real robot setups. Through paired sim-and-real evaluations of open-source manipulation policies, we demonstrate strong correlation between policy performance in SIMPLER environments and in the real world. Additionally, we find that SIMPLER evaluations accurately reflect real-world policy behavior modes such as sensitivity to various distribution shifts. We open-source all SIMPLER environments along with our workflow for creating new environment
+              We identify control and visual disparities between real and simulated environments as key challenges for reliable simulated evaluation and propose approaches 
+              for mitigating these gaps without needing to craft full-fidelity digital twins of real-world environments.
+              We then employ these approaches to create SIMPLER, a collection of simulated environments for manipulation policy evaluation on common real robot setups. 
+              Through paired sim-and-real evaluations of manipulation policies, we demonstrate strong correlation between policy performance in SIMPLER environments and in the real world. 
+              Additionally, we find that SIMPLER evaluations accurately reflect real-world policy behavior modes such as sensitivity to various distribution shifts. 
+              We open-source all SIMPLER environments along with our workflow for creating new environment
               to facilitate research on general-purpose manipulation policies and simulated evaluation frameworks.
             </p>
           </div>
