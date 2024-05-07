@@ -304,8 +304,18 @@ in Simulation</h1>
             <h3 class="title is-4">Metrics for Real-to-Sim Evaluation</h3>
             <img src="static/images/metrics.png" />
             <p>
-              Besides the traditional Pearson correlation metric ("r"), we also introduce the Mean Maximum Rank Violation (MMRV) metric (lower the better)
-              to assess the real-and-sim policy ranking consistency and address Pearson correlation's limitations.
+              An effective & useful simulation-based evaluation should demonstrate <strong>good correlations in policy ranking & performance</strong> with real evaluations.
+            </p>
+            <p>
+              To measure such correlations, one can apply the traditional <strong>Pearson correlation metric ("r")</strong>, but it has the following limitations: (1) Pearson correlation only assess 
+              the linear fit between real-and-sim performances, while for simulated evaluation we don't necessarily need linear correlations,
+              as long as sim eval reflects real-world performance improvements between different policies (middle-right); (2) Pearson correlation does not reflect the range of values it is computed over.
+              For policy sets that perform closely in real (far-right), Pearson r may change drastically based on small real-world performance differences, 
+              which can often be attributed to the inherent noise in real-world evaluations.
+            </p>
+            <p>             
+              Thus, we introduce the <strong>Mean Maximum Rank Violation (MMRV)</strong> metric (lower the better)
+              to better assess the real-and-sim policy ranking consistency.
               The key underlying quantity is the rank violation between two policies, which weighs the significance of the
               simulator incorrectly ranking the policies by the corresponding margin in real-world performance.
               MMRV then aggregates the N^2 rank violations by averaging the worst-case rank violation for each policy.
@@ -316,8 +326,8 @@ in Simulation</h1>
               Visual discrepancies between real-world and simulated environments can comprise a distribution shift that adversely
               affects a learned policy’s behavior, rendering simulated evaluation unreliable. Our goal is to match the simulator
               visuals to those of the real-world environment with only a modest amount of manual effort. Our proposed Visual Matching
-              consists of (1) green screening, i.e. segmenting out interactive simulated assets and overlaying them onto real-world
-              backgrounds; and (2) texture matching, which involves projecting real object textures onto simulation assets and tuning
+              consists of (1) <strong>green screening</strong>, i.e. segmenting out interactive simulated assets and overlaying them onto real-world
+              backgrounds; and (2) <strong>texture matching</strong>, which involves projecting real object textures onto simulation assets and tuning
               robot arm colors using real videos.
             </p>
             <h3 class="title is-4">System Identification to mitigate Real-to-Sim Control Gap</h3>
@@ -365,8 +375,12 @@ in Simulation</h1>
                 <h3 class="title is-4">Evaluating and Comparing Policies</h3>
                 <div class="content has-text-justified">
                   <p>
-                    SIMPLER can be used to evaluate four types of high level tasks, with many intra-task variations, for each of two robot embodiments (Google Robot and WidowX).
-                    It can also be used to compare the performance of different policies and perform checkpoint selection. Policy performances evaluated in SIMPLER have strong
+                    SIMPLER can be used to evaluate diverse sets of rigid-body tasks (non-articulated / articulated objects, tabletop / non-tabletop tasks, shorter / longer horizon tasks), 
+                    with many intra-task variations (e.g., different object combinations; different object / robot positions and orientations), 
+                    for each of two robot embodiments (Google Robot and WidowX).
+                  </p>
+                  <p>
+                    SIMPLER can also compare the performance of different policies and perform checkpoint selection. Policy performances evaluated in SIMPLER have strong
                     correlation with those in the real world (illustrated by low MMRV and high Pearson r in the figures below).
                   </p>
                 </div>
