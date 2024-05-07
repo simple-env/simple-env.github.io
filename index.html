@@ -304,10 +304,11 @@ in Simulation</h1>
             <h3 class="title is-4">Metrics for Real-to-Sim Evaluation</h3>
             <img src="static/images/metrics.png" />
             <p>
-              We propose the Mean Maximum Rank Violation (MMRV) metric to better assess the real-and-sim policy ranking consistency.
-              The key underlying quantity is the rank violation between  two policies, which weighs the significance of the
-              simulator incorrectly ranking the items by the corresponding margin in real-world performance.
-              MMRV aggregates the N^2 rank violations by averaging the worst-case rank violation for each policy.
+              Besides the traditional Pearson correlation metric ("r"), we also introduce the Mean Maximum Rank Violation (MMRV) metric (lower the better)
+              to assess the real-and-sim policy ranking consistency and address Pearson correlation's limitations.
+              The key underlying quantity is the rank violation between two policies, which weighs the significance of the
+              simulator incorrectly ranking the policies by the corresponding margin in real-world performance.
+              MMRV then aggregates the N^2 rank violations by averaging the worst-case rank violation for each policy.
             </p>
             <h3 class="title is-4">Visual Matching to mitigate Real-to-Sim Visual Gap</h3>
             <img src="static/images/visual_matching.png" style="width: 70%; height: auto; display: block; margin: 0 auto;"/>
@@ -346,10 +347,6 @@ in Simulation</h1>
                     <p >Control with SysID</p>
                   </div>
             </div>
-           <!-- <video autoplay muted loop playsinline width="100%">
-              <source src="static/images/vlmaps_blog_post.mp4" type="video/mp4">
-            </video>-->
-
           </div>
         </div>
       </div>
@@ -365,10 +362,11 @@ in Simulation</h1>
               <div class="column is-full-width">
                 <h2 class="title is-3">Applications</h2>
 
-                <h3 class="title is-4">Evaluating Policies</h3>
+                <h3 class="title is-4">Evaluating and Comparing Policies</h3>
                 <div class="content has-text-justified">
                   <p>
-                    SIMPLER can be used to evaluate four types of high level tasks, with many intra-task variations, for each of two robot embodiments (Google Robot and WidowX.
+                    SIMPLER can be used to evaluate four types of high level tasks, with many intra-task variations, for each of two robot embodiments (Google Robot and WidowX).
+                    It can also be used to compare the performance of different policies and perform checkpoint selection.
                   </p>
                 </div>
                 <div class="columns is-vcentered interpolation-panel">
@@ -394,7 +392,6 @@ in Simulation</h1>
                    </div>
                 </div>
 
-
                 <div class="columns is-vcentered interpolation-panel">
                   <div class="column  has-text-centered">
                     <video autoplay controls muted loop playsinline height="100%">
@@ -418,11 +415,32 @@ in Simulation</h1>
                   </div>
                 </div>
 
-              <h3 class="title is-4">Paired Evaluations in Real and Sim</h3>
+                <div style="text-align: center;">
+                  <img width=45% src="static/images/results_google_robot.png" />
+                  <!-- <div style="display: inline-block; width: 5%;"></div> -->
+                  <img width=54% src="static/images/results_bridge.png" />
+                </div>
+
+              <br>
+              <h3 class="title is-4">Studying and Predicting Policy Behaviors under Distribution Shifts</h3>
                 <div class="content has-text-justified">
                   <p>
-                    Our approach yields a strong correlation between real-world and simulated performance for various open-source robot policies,
-                    across two commonly used robot embodiments (Google Robot and WidowX) and over ∼1500 evaluation episodes.
+                    SIMPLER can be used to study policies' finegrained behaviors, such as their robustness to common distribution shifts like lighting, background, camera pose, 
+                    distractor objects, and table texture changes. The simulation findings are highly correlated with those in the real-world.
+                    Additionally, SIMPLER can be used to predict how policies will behave under novel distribution shifts in the real world, such as changes in arm textures.
+                  </p>
+                  <div style="text-align: center;">
+                    <img width=40% src="static/images/results_dist_shifts.png" />
+                    <div style="display: inline-block; width: 5%;"></div>
+                    <img width=50% src="static/images/results_arm_texture.png" />
+                  </div>
+                </div>
+
+              <br>
+              <h3 class="title is-4">Gallery: Paired Evaluations in Real and Sim</h2>
+                <div class="content has-text-justified">
+                  <p>
+                    SIMPLER yields a strong correlation between real-world and simulated performance across ∼1500 evaluation episodes.
                   </p>
                 </div>
                 <h4 class="title is-6">Real World Rollouts for Google Robot</h4>
@@ -520,116 +538,8 @@ in Simulation</h1>
                   </video>
                   </div>
                 </div>
-                <!--/ Interpolating. -->
-
-                <!-- Re-rendering. -->
-              <!--  <h3 class="title is-4">Multi-Embodiment Navigation</h3>
-                <div class="content has-text-justified">
-                  <p>
-                    A VLMap can be shared among different robots and enables generation of obstacle maps for different
-                    embodiments on-the-fly to improve navigation efficiency. For example, a LoCoBot (ground robot) has
-                    to avoid sofa, tables, chairs and so on during planning while a drone can ignore them. Experiments
-                    below show how a single VLMap representation in each scene can adapt to different embodiments
-                    (by generating customized obstacle maps) and improve navigation efficiency.
-                  </p>
-                </div>
-
-                <p>Move to the laptop and the box sequentially</p>
-                <br>
-                <div class="columns is-vcentered interpolation-panel">
-                  <div class="column  has-text-centered">
-                    <video autoplay controls muted loop playsinline height="100%">
-                      <source src="static/images/multi_2_drone.mp4" type="video/mp4">
-                    </video>
-                    <p>Drone</p>
-                  </div>
-                  <div class="column  has-text-centered">
-                    <video autoplay controls muted loop playsinline height="100%">
-                      <source src="static/images/multi_2_locobot.mp4" type="video/mp4">
-                    </video>
-                    <p>LoCoBot</p>
-                  </div>
-                </div>
-
-                <p>Move to the window</p>
-                <br>
-                <div class="columns is-vcentered interpolation-panel">
-                  <div class="column  has-text-centered">
-                    <video autoplay controls muted loop playsinline height="100%">
-                      <source src="static/images/multi_3_drone.mp4" type="video/mp4">
-                    </video>
-                    <p>Drone</p>
-                  </div>
-                  <div class="column  has-text-centered">
-                    <video autoplay controls muted loop playsinline height="100%">
-                      <source src="static/images/multi_3_locobot.mp4" type="video/mp4">
-                    </video>
-                    <p>LoCoBot</p>
-                  </div>
-                </div>
-
-                <p>Move to the television</p>
-                <br>
-                <div class="columns is-vcentered interpolation-panel">
-                  <div class="column  has-text-centered">
-                    <video autoplay controls muted loop playsinline height="100%">
-                      <source src="static/images/multi_4_drone.mp4" type="video/mp4">
-                    </video>
-                    <p>Drone</p>
-                  </div>
-                  <div class="column  has-text-centered">
-                    <video autoplay controls muted loop playsinline height="100%">
-                      <source src="static/images/multi_4_locobot.mp4" type="video/mp4">
-                    </video>
-                    <p>LoCoBot</p>
-                  </div>
-                </div>-->
-
-                <!-- <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div> -->
-                <!--/ Re-rendering. -->
-
               </div>
             </div>
-            <!--/ Animation. -->
-
-
-            <!-- Concurrent Work. -->
-            <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div> -->
-            <!--/ Concurrent Work. -->
-
           </div>
       </section>
 
